@@ -17,7 +17,9 @@
   "dependencies": {
     "mocha": "^7.1.1",
     "mochawesome": "^5.0.0",
-    "puppeteer": "^1.6.2"
+    "puppeteer": "^1.6.2",
+    "puppeteer-extra": "^3.1.9",
+    "puppeteer-extra-plugin-stealth": "^2.4.9"
   },
   "devDependencies": {
     "eslint-plugin-mocha": "^4.11.0",
