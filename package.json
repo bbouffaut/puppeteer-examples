@@ -1,8 +1,22 @@
 {
   "name": "puppeteer-examples",
   "version": "1.0.0",
-  "description": "",
+  "homepage": "https://github.com/checkly/puppeteer-examples#readme",
+  "bugs": {
+    "url": "https://github.com/checkly/puppeteer-examples/issues"
+  },
+  "license": "ISC",
+  "author": "Tim Nolet",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/checkly/puppeteer-examples.git"
+  },
+  "scripts": {
+    "test": "mocha tests --reporter mochawesome --reporter-options autoOpen=true"
+  },
   "dependencies": {
+    "mocha": "^7.1.1",
+    "mochawesome": "^5.0.0",
     "puppeteer": "^1.6.2"
   },
   "devDependencies": {
@@ -11,15 +25,5 @@
     "jest": "^21.2.1",
     "js-comments": "^0.5.4",
     "lodash": "^4.17.13"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/checkly/puppeteer-examples.git"
-  },
-  "author": "Tim Nolet",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/checkly/puppeteer-examples/issues"
-  },
-  "homepage": "https://github.com/checkly/puppeteer-examples#readme"
+  }
 }

@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-04-01T21:57:01.043Z",
+    "end": "2020-04-01T21:57:17.164Z",
+    "duration": 16121,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "325aff6e-a1a7-44ce-954d-661f53ec8387",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [
+        {
+          "title": "\"before all\" hook",
+          "fullTitle": "\"before all\" hook",
+          "timedOut": false,
+          "duration": 1499,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "browser = await puppeteer.launch()\npage = await browser.newPage()",
+          "err": {},
+          "uuid": "359ed439-b5c2-481b-8414-045988f5d397",
+          "parentUUID": "325aff6e-a1a7-44ce-954d-661f53ec8387",
+          "isHook": true,
+          "skipped": false
+        }
+      ],
+      "afterHooks": [
+        {
+          "title": "\"after all\" hook",
+          "fullTitle": "\"after all\" hook",
+          "timedOut": false,
+          "duration": 23,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "await browser.close()",
+          "err": {},
+          "uuid": "0a6be60f-bc61-40a4-8be2-a002ce8995fb",
+          "parentUUID": "325aff6e-a1a7-44ce-954d-661f53ec8387",
+          "isHook": true,
+          "skipped": false
+        }
+      ],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a390a25a-872a-4780-a1ad-2114f3b02568",
+          "title": "Amazon Homepage",
+          "fullFile": "/home/baptiste/workspace/puppeteer-examples/tests/amazon.js",
+          "file": "/tests/amazon.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "has search input",
+              "fullTitle": "Amazon Homepage has search input",
+              "timedOut": false,
+              "duration": 4583,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await page.setViewport({ width: 1280, height: 800 })\nawait page.goto('https://www.amazon.com',{ waitUntil: 'networkidle0' })\nconst searchInput = await page.$('#twotabsearchtextbox')\nassert.ok(searchInput)\nawait page.screenshot({ path: 'amz.png'})",
+              "err": {},
+              "uuid": "8a595484-b0ab-4b56-bafc-d6c4cb8a1c0b",
+              "parentUUID": "a390a25a-872a-4780-a1ad-2114f3b02568",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "shows search results after search input",
+              "fullTitle": "Amazon Homepage shows search results after search input",
+              "timedOut": true,
+              "duration": 10003,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await page.type('#twotabsearchtextbox', 'nyan cat pullover')\nawait page.click('input.nav-input')\nawait page.waitForSelector('#resultsCol')\nconst firstProduct = await page.$('a.a-link-normal.a-text-normal')\nassert.ok(firstProduct)",
+              "err": {
+                "message": "Error: Timeout of 10000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (/home/baptiste/workspace/puppeteer-examples/tests/amazon.js)",
+                "estack": "Error: Timeout of 10000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (/home/baptiste/workspace/puppeteer-examples/tests/amazon.js)",
+                "diff": null
+              },
+              "uuid": "28ae2267-6c83-46bd-974e-cc790e372c75",
+              "parentUUID": "a390a25a-872a-4780-a1ad-2114f3b02568",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8a595484-b0ab-4b56-bafc-d6c4cb8a1c0b"
+          ],
+          "failures": [
+            "28ae2267-6c83-46bd-974e-cc790e372c75"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 14586,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "5.0.0"
+    },
+    "marge": {
+      "options": {
+        "autoOpen": "true"
+      },
+      "version": "4.1.0"
+    }
+  }
+}
